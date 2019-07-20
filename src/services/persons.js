@@ -1,5 +1,7 @@
 import axios from 'axios'
-const baseurl = 'https://json-server--vsparrow.repl.co/persons'
+// const baseurl = 'https://json-server--vsparrow.repl.co/persons'
+const baseurl = '/api/persons';
+// const baseurl = 'http://172.18.0.16:3001/api/persons'
 
 const getAll = () => { 
   return axios.get(baseurl).then(response => response.data)
