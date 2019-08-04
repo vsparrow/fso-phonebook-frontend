@@ -9,6 +9,7 @@ const Notification = (props)=>{
   let fontColor = "green"
   //'has already been removed from server'
   if(props.newNotification.includes('has already been removed from')){fontColor='red'}
+  if(props.newNotification.includes('validation failed')){fontColor='red'}
 
   const notificationStyle = {
     color: fontColor,

@@ -60,8 +60,16 @@ const PersonForm = (props) => {
             const newPerson = {name: props.newName, number: props.newNumber}
             personService
             .create(newPerson)
-            .then(data => setPersons(persons.concat(data)))
-            setNewNotifcation(`Added ${props.newName}`)
+            .then(data => {
+				// console.log("data is ", data)
+				if(!data.error){
+					setPersons(persons.concat(data));
+					setNewNotifcation(`Added ${props.newName}`)
+				}
+				else{//there was a validation error
+					setNewNotifcation(`${data.error}`)					
+				}
+			})            
             resetFields()
         }
         else{
